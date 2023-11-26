@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>URL Shortener By Abdul</title>
+</head>
+<body>
+    <h1>URL Shortener By Abdul</h1>
+    <form action="/shorten" method="post">
+        <label for="long_url">Enter a URL:</label>
+        <input type="text" name="long_url" id="long_url" required>
+        <label for="customize_code">Customize Code (optional):</label>
+        <input type="text" name="customize_code" id="customize_code">
+        <button type="submit">Shorten</button>
+    </form>
+
+    <form action="{{ url_for('list_urls')}}" method="post" onsubmit="return You can copy" class="form-inline">
+        <button type="submit" class="button-purple">Create QR</button>
+    </form>
+    
+
+</body>
+</html>

@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>URLs</title>
+    <link rel="stylesheet" href="{{ 'static/styles.css' }}">
+</head>
+<body>
+
+<div>
+<table>
+  <tr>
+    <th>Full URL</th>
+    <th>Short URL</th>
+    <th>QR Code</th>
+  </tr>
+  <tr>
+    {% for url in urls_data %}
+    <td>{{url.long_url}}</td>
+    <td><a href="http://127.0.0.1:5000/{{url.short_code}}">{{url.short_code}}</a></td>
+    <td>{{ url.qr_code.svg_inline(scale=3) | safe }}</td>
+  </tr>
+  {% endfor %}
+</table>
+  </div>
+
+</body>
+</html>
